@@ -1,19 +1,33 @@
 import express from "express"
 import cors from "cors"
+import mongoose from "mongoose"
 import dotenv from "dotenv"
+import dutyRoutes from "./routes/dutyRoutes.mjs"
 
 dotenv.config()
 
 const PORT = process.env.PORT || ""
+const DB_URI = process.env.DB_URI || ""
 
 const app = express()
 
 app.use(cors())
 
-app.get("/", (req,res) => {
-    res.json({mssg:"Welcome to your app"})
+app.use(express.json()) 
+
+app.use((req,res,next) => {
+    console.log(req.path, req.method)
+    next()
 })
 
-app.listen(PORT, () => {
-    console.log(`listening on port ${PORT}`)
-})
+app.use("/api/duties", dutyRoutes)
+
+mongoose.connect(DB_URI)
+    .then(() => {
+        app.listen(PORT, () => {
+            console.log(`connected to db and listening on port ${PORT}`)
+        })
+    })
+    .catch((error) => {
+        console.log(error)
+    })
