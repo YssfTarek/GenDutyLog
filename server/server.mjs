@@ -3,6 +3,7 @@ import cors from "cors"
 import mongoose from "mongoose"
 import dotenv from "dotenv"
 import dutyRoutes from "./routes/dutyRoutes.mjs"
+import updateRoutes from "./routes/updateRoutes.mjs"
 
 dotenv.config()
 
@@ -21,6 +22,7 @@ app.use((req,res,next) => {
 })
 
 app.use("/api/duties", dutyRoutes)
+app.use("/api/duties/update", updateRoutes)
 
 mongoose.connect(DB_URI)
     .then(() => {

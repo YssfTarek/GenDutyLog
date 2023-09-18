@@ -4,11 +4,10 @@ module.exports = {
         cwd: "./server",
         script: "sudo node server.mjs",
         watch: true
-    }/*,{
-        name: "GenDashClient",
+    },{
+        name: "GenDutyLogClient",
         cwd: "./client/src",
         script: "sudo npm start",
         watch: true
-    }*/
-    ]
+    }]
 };
