@@ -13,7 +13,7 @@ export default function DutyDetails ({location}) {
             }
         }
         fetchDuties()
-    }, [])
+    }, [location])
 
     return (
         <table className="table table-striped table-bordered mt-3 w-50">
