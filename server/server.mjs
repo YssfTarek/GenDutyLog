@@ -12,6 +12,8 @@ const DB_URI = process.env.DB_URI || ""
 
 const app = express()
 
+app.set("trust proxy", true)
+
 app.use(cors())
 
 app.use(express.json()) 
