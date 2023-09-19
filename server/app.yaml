@@ -1,4 +1,4 @@
 runtime: nodejs18
-service: GenDutyLog
+service: gendutylog
 env_variables:
   DB_URI: mongodb+srv://ytabdou:LJZfaOJ2Xy4Zi0Bo@mygencluster.zjmvb9a.mongodb.net/?retryWrites=true&w=majority
