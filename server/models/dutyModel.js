@@ -1,4 +1,4 @@
-import mongoose from "mongoose"
+const mongoose = require("mongoose")
 
 const Schema = mongoose.Schema
 
@@ -17,4 +17,4 @@ const dutySchema = new Schema({
     }
 }, {timestamps:true}, {collection:"duties"})
 
-export default mongoose.model("Duty", dutySchema)
+module.exports = mongoose.model("Duty", dutySchema)

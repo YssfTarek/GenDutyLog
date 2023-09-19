@@ -1,7 +1,7 @@
-import Duty from "../models/dutyModel.mjs"
+const Duty = require("../models/dutyModel.js")
 
 //Get done duty by station
-export default async function getStation (req,res) {
+async function getStation (req,res) {
 
     const { station } = req.params
 
@@ -12,3 +12,5 @@ export default async function getStation (req,res) {
             res.status(400).json({error: error.message})
     }
 }
+
+module.exports = getStation

@@ -1,9 +1,9 @@
-import express from "express"
-import cors from "cors"
-import mongoose from "mongoose"
-import dotenv from "dotenv"
-import dutyRoutes from "./routes/dutyRoutes.mjs"
-import updateRoutes from "./routes/updateRoutes.mjs"
+const express = require ("express")
+const cors =  require("cors")
+const mongoose = require("mongoose")
+const dotenv = require("dotenv")
+const dutyRoutes = require("./routes/dutyRoutes.js")
+const updateRoutes = require("./routes/updateRoutes.js")
 
 dotenv.config()
 
@@ -13,6 +13,8 @@ const DB_URI = process.env.DB_URI || ""
 const app = express()
 
 app.set("trust proxy", true)
+
+app.use(express.static(__dirname + '/public/build'));
 
 app.use(cors())
 

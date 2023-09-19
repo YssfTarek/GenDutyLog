@@ -1,7 +1,7 @@
-import Duty from "../models/dutyModel.mjs"
+const Duty = require("../models/dutyModel.js")
 
 //Update duty by station
-export default async function addDuty(req, res) {
+async function addDuty(req, res) {
     const { station } = req.params
 
     const { name, type } = req.body
@@ -13,3 +13,5 @@ export default async function addDuty(req, res) {
         res.status(400).json({error:error.message})
     }
 }
+
+module.exports = addDuty
