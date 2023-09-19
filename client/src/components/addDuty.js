@@ -16,7 +16,7 @@ export default function AddDuty({location}) {
     async function handleSubmit(e){
         e.preventDefault()
         const update = {name, location, type}
-        const response = await fetch (`/api/duties/update/${location}`, {
+        const response = await fetch (`http://localhost:4000/api/duties/update/${location}`, {
             method: "POST",
             body: JSON.stringify(update),
             headers: {

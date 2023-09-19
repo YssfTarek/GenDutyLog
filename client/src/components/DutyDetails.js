@@ -5,7 +5,7 @@ export default function DutyDetails ({location}) {
     const [ duties, setDuties ] = useState(null)
     useEffect(() => {
         async function fetchDuties() {
-            const response = await fetch (`/api/duties/${location}`)
+            const response = await fetch (`http://localhost:4000/api/duties/${location}`)
             const json = await response.json()
 
             if (response.ok) {
