@@ -1,4 +1,5 @@
-runtime: nodejs18
+runtime: nodejs
+env: flex
 env_variables:
   DB_URI: mongodb+srv://ytabdou:LJZfaOJ2Xy4Zi0Bo@mygencluster.zjmvb9a.mongodb.net/?retryWrites=true&w=majority
 handlers:
