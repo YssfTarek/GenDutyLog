@@ -5,7 +5,7 @@ export default function DutyDetails ({location}) {
     const [ duties, setDuties ] = useState(null)
     useEffect(() => {
         async function fetchDuties() {
-            const response = await fetch (`https://test-duty-log.uc.r.appspot.com/api/duties/${location}`)
+            const response = await fetch (`https://gen-duty-log.uc.r.appspot.com/api/duties/${location}`)
             const json = await response.json()
 
             if (response.ok) {
