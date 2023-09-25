@@ -2,12 +2,9 @@ import { useEffect, useState } from "react";
 
 export default function AddDuty({location}) {
     const [ type, setType ] = useState(location)
-
-    useEffect(() => {
-        if (type.value === "cleanroom"){
-            setType("Decontamination")
-        }
-    })
+        
+    if (type === "cleanroom")
+    {setType("Decontamination")}
 
     const [ name, setName ] = useState("")
     const [ message, setMessage ] = useState("")
