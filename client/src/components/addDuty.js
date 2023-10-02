@@ -16,7 +16,7 @@ export default function AddDuty({location}) {
         const update = {name, location, type}
         setButton(true)
         setLoading(true)
-        const response = await fetch (`https://gen-duty-log.uc.r.appspot.com/api/duties/update/${location}`, {
+        const response = await fetch (`https://gen-duty-log-400812.uc.r.appspot.com/api/duties/update/${location}`, {
             method: "POST",
             body: JSON.stringify(update),
             headers: {
