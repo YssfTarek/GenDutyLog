@@ -2,8 +2,6 @@ runtime: nodejs
 
 service: frontend
 
-env: flex
-
 handlers:
   - url: /(.*\..+)$
     static_files: build/\1
@@ -14,11 +12,3 @@ handlers:
     static_files: build/index.html
     upload: build/index.html
     secure: always
-
-manual_scaling:
-  instances: 1
-
-resources:
-  cpu: 1
-  memory_gb: 0.5
-  disk_size_gb: 10

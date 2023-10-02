@@ -14,8 +14,6 @@ const app = express()
 
 app.set("trust proxy", true)
 
-//app.use(express.static(__dirname + '/public/build'));
-
 app.use(cors())
 
 app.use(express.json()) 
