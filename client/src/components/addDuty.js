@@ -45,6 +45,7 @@ export default function AddDuty({location}) {
                 <input className="form-control" type="text" placeholder="Please enter your name" aria-label="default input example" onChange = {(e) => setName(e.target.value)} value = {name}/>
                 {location !== "cleanroom" && 
                     <select className="form-select" aria-label="Dropdown menu" onChange={(e) => setType(e.target.value)} value = {type}>
+                        <option selected>Choose Wash Type</option>
                         <option value = "PostRun/Template">Post Run/ Template</option>
                         <option value = "PostRun">Post Run</option>
                         <option value = "Maintenance">Maintenance</option>
@@ -52,9 +53,9 @@ export default function AddDuty({location}) {
                     </select>
                 }
                 <button className="btn btn-primary m-3" type="submit" disabled = {button}>Update</button>
-                {loading ? <div class="d-flex justify-content-center">
-                                <div class="spinner-border" role="status">
-                                    <span class="visually-hidden">Loading...</span>
+                {loading ? <div className="d-flex justify-content-center">
+                                <div className="spinner-border" role="status">
+                                    <span className="visually-hidden">Loading...</span>
                                 </div>
                             </div>
                 : <p className="text-primary">{message}</p>
